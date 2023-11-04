@@ -1,0 +1,120 @@
+[gd_scene load_steps=5 format=3 uid="uid://c38jlonbssccy"]
+
+[ext_resource type="Texture2D" uid="uid://cn18etnduf77k" path="res://PixelOcean.png" id="1_efywt"]
+[ext_resource type="Script" path="res://GameOver.gd" id="2_4k8tv"]
+[ext_resource type="Theme" uid="uid://bbgh6pyqlmw03" path="res://new_theme.tres" id="3_ymxwo"]
+[ext_resource type="FontFile" uid="uid://cuwevlkiu8qjg" path="res://Panic.ttf" id="4_w3luy"]
+
+[node name="Game Over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 1)
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_efywt")
+expand_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("2_4k8tv")
+
+[node name="Game Over" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_ymxwo")
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Game Over"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Game Over/CenterContainer"]
+modulate = Color(1, 0, 0, 1)
+custom_minimum_size = Vector2(512, 512)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Game Over/CenterContainer/PanelContainer"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Game Over/CenterContainer/PanelContainer/MarginContainer"]
+modulate = Color(1, 0, 0, 1)
+layout_direction = 1
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="CanvasLayer/Game Over/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme_override_colors/font_color = Color(0.356863, 0.0156863, 0.0862745, 1)
+theme_override_colors/font_shadow_color = Color(0.223529, 0, 0.027451, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("4_w3luy")
+theme_override_font_sizes/font_size = 125
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartBTN" type="Button" parent="CanvasLayer/Game Over/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+modulate = Color(1, 0, 0, 1)
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("3_ymxwo")
+theme_override_font_sizes/font_size = 35
+text = "Restart Level"
+
+[node name="LevelSelectBTN" type="Button" parent="CanvasLayer/Game Over/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+modulate = Color(1, 0, 0, 1)
+custom_minimum_size = Vector2(0, 125)
+layout_direction = 1
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme_override_font_sizes/font_size = 35
+text = "Level Select"
+
+[node name="QuitBTN" type="Button" parent="CanvasLayer/Game Over/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+modulate = Color(1, 0, 0, 1)
+custom_minimum_size = Vector2(0, 125)
+layout_direction = 1
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme_override_font_sizes/font_size = 35
+text = "Quit to Desktop"
+
+[connection signal="pressed" from="CanvasLayer/Game Over/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/RestartBTN" to="CanvasLayer" method="_on_play_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/Game Over/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/RestartBTN" to="CanvasLayer" method="_on_restart_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/Game Over/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/LevelSelectBTN" to="CanvasLayer" method="_on_settings_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/Game Over/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/LevelSelectBTN" to="CanvasLayer" method="_on_level_select_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/Game Over/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/QuitBTN" to="CanvasLayer" method="_on_quit_btn_pressed"]
