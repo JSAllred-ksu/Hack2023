@@ -1,6 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://t1r24xiu354g"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_p3t64"]
+
+[ext_resource type="PackedScene" uid="uid://ignpdv10rx52" path="res://addons/boujie_water_shader/prefabs/deep_ocean.tscn" id="5_d4w5e"]
+[ext_resource type="Script" path="res://addons/boujie_water_shader/types/water_material_designer.gd" id="6_ylh6q"]
+
 [ext_resource type="Material" uid="uid://dn5o4fji46t47" path="res://addons/level_block/log.tres" id="2_gnnbr"]
 [ext_resource type="Material" uid="uid://c71yladfjhgud" path="res://addons/level_block/default_material.tres" id="3_j5rn5"]
 
@@ -73,6 +77,7 @@ shape = SubResource("WorldBoundaryShape3D_jehsn")
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.61566, 0)
+
 visible = false
 script = ExtResource("1_p3t64")
 
