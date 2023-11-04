@@ -1,6 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://t1r24xiu354g"]
+[gd_scene load_steps=10 format=3 uid="uid://t1r24xiu354g"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_p3t64"]
+[ext_resource type="Material" uid="uid://c71yladfjhgud" path="res://addons/level_block/default_material.tres" id="3_j5rn5"]
+[ext_resource type="PackedScene" uid="uid://ignpdv10rx52" path="res://addons/boujie_water_shader/prefabs/deep_ocean.tscn" id="5_d4w5e"]
+[ext_resource type="Script" path="res://addons/boujie_water_shader/types/water_material_designer.gd" id="6_ylh6q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xlfb6"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -32,19 +35,41 @@ environment = SubResource("Environment_e0ajr")
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 use_collision = true
 size = Vector3(20, 1, 20)
+material = ExtResource("3_j5rn5")
 
-[node name="Player" type="CharacterBody3D" parent="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.61566, 0)
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25.7193)
+use_collision = true
+size = Vector3(20, 1, 20)
+material = ExtResource("3_j5rn5")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="DeepOcean" parent="Node" instance=ExtResource("5_d4w5e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.831482, -1.67164, -11.6324)
+far_edge = 2000
+
+[node name="WaterMaterialDesigner2" type="Node" parent="Node"]
+script = ExtResource("6_ylh6q")
+distance_fade_far = 100
+distance_fade_softness = 0.501
+wave_fade_far = 50
+wave_fade_softness = 0.431
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0660582, 1.6964, -0.0102043)
 visible = false
 script = ExtResource("1_p3t64")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBox3D/Player"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
 mesh = SubResource("CapsuleMesh_a0y3j")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/Player"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 shape = SubResource("ConvexPolygonShape3D_jmfgh")
 
-[node name="Head" type="Node3D" parent="CSGBox3D/Player"]
+[node name="Head" type="Node3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.653214, 0)
 
-[node name="Camera3D" type="Camera3D" parent="CSGBox3D/Player/Head"]
+[node name="Camera3D" type="Camera3D" parent="Player/Head"]
