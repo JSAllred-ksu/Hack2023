@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Player.gd" id="1_p3t64"]
 [ext_resource type="Material" uid="uid://dn5o4fji46t47" path="res://addons/level_block/log.tres" id="2_gnnbr"]
 [ext_resource type="Material" uid="uid://c71yladfjhgud" path="res://addons/level_block/default_material.tres" id="3_j5rn5"]
+
 [ext_resource type="Script" path="res://addons/boujie_water_shader/types/ocean.gd" id="4_af155"]
 [ext_resource type="Material" uid="uid://cvnsu7lttsfsh" path="res://addons/boujie_water_shader/prefabs/outset_ocean_material.tres" id="5_fj1c1"]
 [ext_resource type="Script" path="res://addons/boujie_water_shader/types/water_material_designer.gd" id="6_sudvd"]
