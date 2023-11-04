@@ -48,3 +48,5 @@ shape = SubResource("ConvexPolygonShape3D_jmfgh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.653214, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CSGBox3D/Player/Head"]
+
+[node name="Timer" type="Timer" parent="."]
