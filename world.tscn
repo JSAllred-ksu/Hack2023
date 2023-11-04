@@ -53,6 +53,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.653214, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CSGBox3D/Player/Head"]
 
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25.7193)
+use_collision = true
+size = Vector3(20, 1, 20)
+material = ExtResource("3_j5rn5")
+
 [node name="Timer" type="Timer" parent="."]
 
 [node name="LevelBlock" type="Node3D" parent="."]
@@ -68,9 +74,3 @@ west_face = 0
 top_face = 0
 bottom_face = 0
 flip_faces = true
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25.7193)
-use_collision = true
-size = Vector3(20, 1, 20)
-material = ExtResource("3_j5rn5")
