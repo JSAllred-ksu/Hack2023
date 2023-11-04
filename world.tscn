@@ -1,12 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://t1r24xiu354g"]
+[gd_scene load_steps=13 format=3 uid="uid://t1r24xiu354g"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_p3t64"]
-
-[ext_resource type="PackedScene" uid="uid://ignpdv10rx52" path="res://addons/boujie_water_shader/prefabs/deep_ocean.tscn" id="5_d4w5e"]
-[ext_resource type="Script" path="res://addons/boujie_water_shader/types/water_material_designer.gd" id="6_ylh6q"]
-
 [ext_resource type="Material" uid="uid://dn5o4fji46t47" path="res://addons/level_block/log.tres" id="2_gnnbr"]
 [ext_resource type="Material" uid="uid://c71yladfjhgud" path="res://addons/level_block/default_material.tres" id="3_j5rn5"]
+[ext_resource type="Script" path="res://addons/boujie_water_shader/types/ocean.gd" id="4_e3i3w"]
+[ext_resource type="Material" uid="uid://cvnsu7lttsfsh" path="res://addons/boujie_water_shader/prefabs/outset_ocean_material.tres" id="5_fpyht"]
+[ext_resource type="Script" path="res://addons/boujie_water_shader/types/water_material_designer.gd" id="6_hqlf4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xlfb6"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -70,14 +69,13 @@ material = ExtResource("2_gnnbr")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, -8.01371, 0)
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, -2.71507, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("WorldBoundaryShape3D_jehsn")
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.61566, 0)
-
 visible = false
 script = ExtResource("1_p3t64")
 
@@ -91,3 +89,13 @@ shape = SubResource("ConvexPolygonShape3D_jmfgh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.653214, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player/Head"]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Ocean" type="Node3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.35202, 0)
+script = ExtResource("4_e3i3w")
+material = ExtResource("5_fpyht")
+
+[node name="WaterMaterialDesigner" type="Node" parent="Node"]
+script = ExtResource("6_hqlf4")
