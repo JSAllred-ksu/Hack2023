@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://t1r24xiu354g"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_p3t64"]
-[ext_resource type="Script" path="res://addons/level_block/level_block_node.gd" id="2_vakai"]
 [ext_resource type="Material" uid="uid://c71yladfjhgud" path="res://addons/level_block/default_material.tres" id="3_j5rn5"]
-[ext_resource type="Texture2D" uid="uid://4hitwkqydv3o" path="res://Wood_plancks_006_COLOR.jpg" id="4_j61fq"]
+[ext_resource type="PackedScene" uid="uid://ignpdv10rx52" path="res://addons/boujie_water_shader/prefabs/deep_ocean.tscn" id="5_d4w5e"]
+[ext_resource type="Script" path="res://addons/boujie_water_shader/types/water_material_designer.gd" id="6_ylh6q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xlfb6"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -37,22 +37,6 @@ use_collision = true
 size = Vector3(20, 1, 20)
 material = ExtResource("3_j5rn5")
 
-[node name="Player" type="CharacterBody3D" parent="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.61566, 0)
-visible = false
-script = ExtResource("1_p3t64")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBox3D/Player"]
-mesh = SubResource("CapsuleMesh_a0y3j")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/Player"]
-shape = SubResource("ConvexPolygonShape3D_jmfgh")
-
-[node name="Head" type="Node3D" parent="CSGBox3D/Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.653214, 0)
-
-[node name="Camera3D" type="Camera3D" parent="CSGBox3D/Player/Head"]
-
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25.7193)
 use_collision = true
@@ -61,16 +45,31 @@ material = ExtResource("3_j5rn5")
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="LevelBlock" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.136625, -4.35152, 0)
-script = ExtResource("2_vakai")
-material = ExtResource("3_j5rn5")
-texture_sheet = ExtResource("4_j61fq")
-texture_size = 400.0
-north_face = 0
-east_face = 0
-south_face = 0
-west_face = 0
-top_face = 0
-bottom_face = 0
-flip_faces = true
+[node name="Node" type="Node" parent="."]
+
+[node name="DeepOcean" parent="Node" instance=ExtResource("5_d4w5e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.831482, -1.67164, -11.6324)
+far_edge = 2000
+
+[node name="WaterMaterialDesigner2" type="Node" parent="Node"]
+script = ExtResource("6_ylh6q")
+distance_fade_far = 100
+distance_fade_softness = 0.501
+wave_fade_far = 50
+wave_fade_softness = 0.431
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0660582, 1.6964, -0.0102043)
+visible = false
+script = ExtResource("1_p3t64")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+mesh = SubResource("CapsuleMesh_a0y3j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("ConvexPolygonShape3D_jmfgh")
+
+[node name="Head" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.653214, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player/Head"]
