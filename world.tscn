@@ -1,8 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://t1r24xiu354g"]
+[gd_scene load_steps=13 format=3 uid="uid://t1r24xiu354g"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_p3t64"]
 [ext_resource type="Material" uid="uid://dn5o4fji46t47" path="res://addons/level_block/log.tres" id="2_gnnbr"]
 [ext_resource type="Material" uid="uid://c71yladfjhgud" path="res://addons/level_block/default_material.tres" id="3_j5rn5"]
+[ext_resource type="Script" path="res://addons/boujie_water_shader/types/ocean.gd" id="4_af155"]
+[ext_resource type="Material" uid="uid://cvnsu7lttsfsh" path="res://addons/boujie_water_shader/prefabs/outset_ocean_material.tres" id="5_fj1c1"]
+[ext_resource type="Script" path="res://addons/boujie_water_shader/types/water_material_designer.gd" id="6_sudvd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xlfb6"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -66,7 +69,7 @@ material = ExtResource("2_gnnbr")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, -8.01371, 0)
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, -4.01371, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("WorldBoundaryShape3D_jehsn")
@@ -86,3 +89,13 @@ shape = SubResource("ConvexPolygonShape3D_jmfgh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.653214, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player/Head"]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Ocean" type="Node3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.25816, 0)
+script = ExtResource("4_af155")
+material = ExtResource("5_fj1c1")
+
+[node name="WaterMaterialDesigner" type="Node" parent="Node/Ocean"]
+script = ExtResource("6_sudvd")
