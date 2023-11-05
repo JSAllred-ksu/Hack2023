@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://cyqad8ol8icxr"]
+[gd_scene load_steps=18 format=3 uid="uid://du0pxdig7ccx4"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_0g0lx"]
+[ext_resource type="Script" path="res://Victory.gd" id="1_3hucb"]
 [ext_resource type="Script" path="res://WorldBorder.gd" id="1_wlw8m"]
 [ext_resource type="PackedScene" uid="uid://bask6q5teohu8" path="res://Fishing Rod.glb" id="2_chjjf"]
 [ext_resource type="Script" path="res://addons/boujie_water_shader/types/ocean.gd" id="3_8m4xu"]
@@ -23,6 +24,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nxhmf"]
+size = Vector3(1.25942, 0.001, 1)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_jehsn"]
 
@@ -43,9 +45,10 @@ shadow_enabled = true
 environment = SubResource("Environment_e0ajr")
 
 [node name="Victory" type="Area3D" parent="."]
+script = ExtResource("1_3hucb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Victory"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -27.2515, 8.07429, 116.856)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -27.6201, 4.25028, 116.777)
 shape = SubResource("BoxShape3D_nxhmf")
 
 [node name="WorldBorder" type="Area3D" parent="."]

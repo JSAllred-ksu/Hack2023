@@ -1,14 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvoqrnj0cg0uk"]
+[gd_scene load_steps=10 format=3 uid="uid://bvoqrnj0cg0uk"]
 
-[ext_resource type="PackedScene" uid="uid://t1r24xiu354g" path="res://world.tscn" id="1_pow3w"]
+[ext_resource type="PackedScene" path="res://world.tscn" id="1_pow3w"]
 [ext_resource type="Script" path="res://WorldBorder.gd" id="2_ekulh"]
 [ext_resource type="PackedScene" uid="uid://bask6q5teohu8" path="res://Fishing Rod.glb" id="2_hebqr"]
 [ext_resource type="Material" uid="uid://dn5o4fji46t47" path="res://addons/level_block/log.tres" id="2_sr26w"]
+[ext_resource type="Script" path="res://Victory.gd" id="3_3i4m2"]
 [ext_resource type="Material" uid="uid://c71yladfjhgud" path="res://addons/level_block/default_material.tres" id="3_fm8g0"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_npx68"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4mm3g"]
+size = Vector3(1.65882, 0.001, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_26q1l"]
 
@@ -23,9 +25,10 @@ shape = SubResource("WorldBoundaryShape3D_npx68")
 
 [node name="Victory" type="Area3D" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.7376, 9.12042, 114.7)
+script = ExtResource("3_3i4m2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Victory" index="0"]
-transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -0.909607, 1.79852, 1.45728)
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0.960342, -1.72557, 1.57497)
 shape = SubResource("BoxShape3D_4mm3g")
 
 [node name="MeshInstance3D" parent="Player" index="0"]
