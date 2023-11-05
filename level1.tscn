@@ -1,12 +1,12 @@
 [gd_scene load_steps=15 format=3 uid="uid://du0pxdig7ccx4"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_21t5j"]
-[ext_resource type="Script" path="res://addons/boujie_water_shader/types/ocean.gd" id="2_ie0ok"]
-[ext_resource type="Material" uid="uid://cvnsu7lttsfsh" path="res://addons/boujie_water_shader/prefabs/outset_ocean_material.tres" id="3_emwng"]
-[ext_resource type="Script" path="res://addons/boujie_water_shader/types/water_material_designer.gd" id="4_4vphc"]
-[ext_resource type="Material" uid="uid://c71yladfjhgud" path="res://addons/level_block/default_material.tres" id="5_i6yfa"]
-[ext_resource type="Material" uid="uid://dn5o4fji46t47" path="res://addons/level_block/log.tres" id="6_ghjsa"]
-[ext_resource type="PackedScene" uid="uid://bask6q5teohu8" path="res://Fishing Rod.glb" id="7_53tsh"]
+[ext_resource type="Script" path="res://Player.gd" id="1_0g0lx"]
+[ext_resource type="PackedScene" uid="uid://bask6q5teohu8" path="res://Fishing Rod.glb" id="2_chjjf"]
+[ext_resource type="Script" path="res://addons/boujie_water_shader/types/ocean.gd" id="3_8m4xu"]
+[ext_resource type="Material" uid="uid://cvnsu7lttsfsh" path="res://addons/boujie_water_shader/prefabs/outset_ocean_material.tres" id="4_m6j8m"]
+[ext_resource type="Script" path="res://addons/boujie_water_shader/types/water_material_designer.gd" id="5_it4qm"]
+[ext_resource type="Material" uid="uid://c71yladfjhgud" path="res://addons/level_block/default_material.tres" id="6_dvyss"]
+[ext_resource type="Material" uid="uid://dn5o4fji46t47" path="res://addons/level_block/log.tres" id="7_3ixxh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xlfb6"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -48,7 +48,7 @@ shape = SubResource("WorldBoundaryShape3D_jehsn")
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.61566, 0)
-script = ExtResource("1_21t5j")
+script = ExtResource("1_0g0lx")
 metadata/_edit_lock_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
@@ -62,7 +62,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.6
 
 [node name="Camera3D" type="Camera3D" parent="Player/Head"]
 
-[node name="Rod" parent="Player/Head" instance=ExtResource("7_53tsh")]
+[node name="Rod" parent="Player/Head" instance=ExtResource("2_chjjf")]
 transform = Transform3D(0.241481, 1.407e-08, 0.0647048, -0.0420782, 0.189917, 0.157038, -0.0491542, -0.162578, 0.183446, 0.543702, -0.248682, -0.57943)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Head/Rod"]
@@ -73,18 +73,18 @@ shape = SubResource("CapsuleShape3D_g26ko")
 
 [node name="Ocean" type="Node3D" parent="OceanNodeContainer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.25816, -73.7281)
-script = ExtResource("2_ie0ok")
-material = ExtResource("3_emwng")
+script = ExtResource("3_8m4xu")
+material = ExtResource("4_m6j8m")
 
 [node name="WaterMaterialDesigner" type="Node" parent="OceanNodeContainer/Ocean"]
-script = ExtResource("4_4vphc")
+script = ExtResource("5_it4qm")
 distance_fade_far = 500
 distance_fade_softness = 1.0
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 use_collision = true
 size = Vector3(10.0755, 1, 13.1262)
-material = ExtResource("5_i6yfa")
+material = ExtResource("6_dvyss")
 metadata/_edit_lock_ = true
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D"]
@@ -92,232 +92,232 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.94344, -2.10881, -5.35704)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00623, -2.10881, -5.50875)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D3" type="CSGCylinder3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04532, -2.10881, 5.44862)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D4" type="CSGCylinder3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.73492, -2.10881, 5.35597)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.78922, 0, 15.6517)
 use_collision = true
 size = Vector3(10.0755, 1, 13.1262)
-material = ExtResource("5_i6yfa")
+material = ExtResource("6_dvyss")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.94344, -2.10881, -5.35704)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGBox3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00623, -2.10881, -5.50875)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D3" type="CSGCylinder3D" parent="CSGBox3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04532, -2.10881, 5.44862)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D4" type="CSGCylinder3D" parent="CSGBox3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.73492, -2.10881, 5.35597)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.61605, 0, 33.8616)
 use_collision = true
 size = Vector3(10.0755, 1, 13.1262)
-material = ExtResource("5_i6yfa")
+material = ExtResource("6_dvyss")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.94344, -2.10881, -5.35704)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGBox3D3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00623, -2.10881, -5.50875)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D3" type="CSGCylinder3D" parent="CSGBox3D3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04532, -2.10881, 5.44862)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D4" type="CSGCylinder3D" parent="CSGBox3D3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.73492, -2.10881, 5.35597)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3435, 0, 46.7018)
 use_collision = true
 size = Vector3(10.0755, 1, 13.1262)
-material = ExtResource("5_i6yfa")
+material = ExtResource("6_dvyss")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.94344, -2.10881, -5.35704)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGBox3D4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00623, -2.10881, -5.50875)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D3" type="CSGCylinder3D" parent="CSGBox3D4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04532, -2.10881, 5.44862)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D4" type="CSGCylinder3D" parent="CSGBox3D4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.73492, -2.10881, 5.35597)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6898, 0, 68.3672)
 use_collision = true
 size = Vector3(10.0755, 1, 13.1262)
-material = ExtResource("5_i6yfa")
+material = ExtResource("6_dvyss")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.94344, -2.10881, -5.35704)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGBox3D5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00623, -2.10881, -5.50875)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D3" type="CSGCylinder3D" parent="CSGBox3D5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04532, -2.10881, 5.44862)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D4" type="CSGCylinder3D" parent="CSGBox3D5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.73492, -2.10881, 5.35597)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.3487, 0, 80.3133)
 use_collision = true
 size = Vector3(10.0755, 1, 13.1262)
-material = ExtResource("5_i6yfa")
+material = ExtResource("6_dvyss")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.94344, -2.10881, -5.35704)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGBox3D6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00623, -2.10881, -5.50875)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D3" type="CSGCylinder3D" parent="CSGBox3D6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04532, -2.10881, 5.44862)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D4" type="CSGCylinder3D" parent="CSGBox3D6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.73492, -2.10881, 5.35597)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.4815, -1.60908, 102.202)
 use_collision = true
 size = Vector3(10.0755, 1, 13.1262)
-material = ExtResource("5_i6yfa")
+material = ExtResource("6_dvyss")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.94344, -2.10881, -5.35704)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGBox3D7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00623, -2.10881, -5.50875)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D3" type="CSGCylinder3D" parent="CSGBox3D7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04532, -2.10881, 5.44862)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D4" type="CSGCylinder3D" parent="CSGBox3D7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.73492, -2.10881, 5.35597)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, -24.3264, -2.58455, 101.051)
@@ -325,7 +325,7 @@ use_collision = true
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="."]
 transform = Transform3D(0.743529, 0, 1.30275, 0, 1, 0, -1.30275, 0, 0.743529, -27.5344, -1.56585, 102.117)
@@ -333,7 +333,7 @@ use_collision = true
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D3" type="CSGCylinder3D" parent="."]
 transform = Transform3D(0.683014, 0, -1.33547, 0, 1, 0, 1.33547, 0, 0.683014, -30.6811, -0.550864, 102.897)
@@ -341,7 +341,7 @@ use_collision = true
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D4" type="CSGCylinder3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, -28.6236, 0.524075, 105.839)
@@ -349,7 +349,7 @@ use_collision = true
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D5" type="CSGCylinder3D" parent="."]
 transform = Transform3D(-0.0103673, 0, -1.49996, 0, 1, 0, 1.49996, 0, -0.0103673, -25.3112, 1.40909, 107.261)
@@ -357,38 +357,38 @@ use_collision = true
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -27.4815, 3.69879, 116.193)
 use_collision = true
 size = Vector3(10.0755, 1, 13.1262)
-material = ExtResource("5_i6yfa")
+material = ExtResource("6_dvyss")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D8"]
 transform = Transform3D(1, 0, 0, 0, 1.71497, 0, 0, 0, 1, 3.94344, -3.94077, -5.35704)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGBox3D8"]
 transform = Transform3D(1, 0, 0, 0, 1.95063, 0, 0, 0, 1, -4.00623, -4.67874, -5.50875)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D3" type="CSGCylinder3D" parent="CSGBox3D8"]
 transform = Transform3D(1, 0, 0, 0, 1.92317, 0, 0, 0, 1, 4.04532, -5.00838, 5.44862)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
 
 [node name="CSGCylinder3D4" type="CSGCylinder3D" parent="CSGBox3D8"]
 transform = Transform3D(1, 0, 0, 0, 1.81653, 0, 0, 0, 1, -3.73492, -4.70981, 5.35598)
 radius = 0.75
 height = 5.0
 smooth_faces = false
-material = ExtResource("6_ghjsa")
+material = ExtResource("7_3ixxh")
