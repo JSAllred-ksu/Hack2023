@@ -1,13 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://et47oty5bp1r"]
+[gd_scene load_steps=6 format=3 uid="uid://bvoqrnj0cg0uk"]
 
 [ext_resource type="PackedScene" uid="uid://t1r24xiu354g" path="res://world.tscn" id="1_pow3w"]
+[ext_resource type="PackedScene" uid="uid://bask6q5teohu8" path="res://Fishing Rod.glb" id="2_hebqr"]
 [ext_resource type="Material" uid="uid://dn5o4fji46t47" path="res://addons/level_block/log.tres" id="2_sr26w"]
 [ext_resource type="Material" uid="uid://c71yladfjhgud" path="res://addons/level_block/default_material.tres" id="3_fm8g0"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_26q1l"]
 
 [node name="World" instance=ExtResource("1_pow3w")]
 
 [node name="MeshInstance3D" parent="Player" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0440962, -0.0929575, -0.042698)
+
+[node name="Rod" parent="Player" index="3" instance=ExtResource("2_hebqr")]
+transform = Transform3D(-0.237983, 0.00999095, -0.075924, -0.0421107, 0.189949, 0.156991, 0.0639607, 0.162233, -0.179135, -0.582595, 0.275909, 0.55954)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Rod" index="1"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_26q1l")
 
 [node name="CSGBox3D" parent="." index="5"]
 size = Vector3(10.0755, 0.824404, 12.8546)
@@ -17,9 +27,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.16665, -1.52119, 20.6666)
 
 [node name="CSGBox3D3" parent="." index="7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9554, -1.11866, 27.4969)
-
-[node name="CSGCylinder3D" parent="CSGBox3D3" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.94344, -2.10881, -5.35704)
 
 [node name="CSGBox3D4" parent="." index="8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.0512, -0.119049, 46.0851)
