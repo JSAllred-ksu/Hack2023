@@ -24,6 +24,10 @@ window/size/viewport_height=1200
 
 enabled=PackedStringArray("res://addons/boujie_water_shader/plugin.cfg", "res://addons/level_block/plugin.cfg")
 
+[filesystem]
+
+import/fbx/enabled=false
+
 [input]
 
 up={
