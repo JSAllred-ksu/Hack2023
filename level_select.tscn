@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://uyaur5te5pfg"]
+[gd_scene load_steps=5 format=3 uid="uid://1simelenu6sw"]
 
 [ext_resource type="Texture2D" uid="uid://cn18etnduf77k" path="res://PixelOcean.png" id="1_08fay"]
 [ext_resource type="Script" path="res://LevelSelect.gd" id="2_eai3i"]
-[ext_resource type="Theme" uid="uid://bbgh6pyqlmw03" path="res://new_theme.tres" id="3_3xncu"]
+[ext_resource type="Theme" uid="uid://b5nghfdlp4mp7" path="res://new_theme.tres" id="3_3xncu"]
 [ext_resource type="FontFile" uid="uid://cuwevlkiu8qjg" path="res://Panic.ttf" id="4_0er0f"]
 
 [node name="Level Select" type="Control"]
@@ -105,8 +105,8 @@ size_flags_stretch_ratio = 0.0
 theme_override_font_sizes/font_size = 35
 text = "Level 3 - Pier Prowler"
 
-[connection signal="pressed" from="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/lvl1BTN" to="CanvasLayer" method="_on_lvl_1btn_pressed"]
 [connection signal="pressed" from="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/lvl1BTN" to="CanvasLayer" method="_on_play_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/lvl1BTN" to="CanvasLayer" method="_on_lvl_1btn_pressed"]
 [connection signal="pressed" from="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/lvl2BTN" to="CanvasLayer" method="_on_settings_btn_pressed"]
 [connection signal="pressed" from="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/lvl2BTN" to="CanvasLayer" method="_on_lvl_2btn_pressed"]
 [connection signal="pressed" from="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/lvl3BTN" to="CanvasLayer" method="_on_lvl_3btn_pressed"]
