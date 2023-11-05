@@ -7,41 +7,41 @@
 [ext_resource type="Material" uid="uid://dn5o4fji46t47" path="res://addons/level_block/log.tres" id="3_glta7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u4vhk"]
-size = Vector3(46.4985, 0.001, 46.5175)
+size = Vector3(57.7066, 0.001, 52.308)
 
 [node name="World" instance=ExtResource("1_2jfyc")]
 
-[node name="Victory2" type="Area3D" parent="WorldBorder" index="1"]
-transform = Transform3D(0.0004, 0, 0, 0, 0.0004, 0, 0, 0, 0.0004, 5.84174, 0.163322, 5.98317)
+[node name="Victory3" type="Area3D" parent="." index="3"]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 292.087, 3.57061, 299.158)
 script = ExtResource("2_jl2y8")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldBorder/Victory2" index="0"]
-transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -345.209, -107.678, -240.172)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Victory3" index="0"]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -404.718, -146.446, -222.388)
 shape = SubResource("BoxShape3D_u4vhk")
 
-[node name="Victory" type="Area3D" parent="WorldBorder" index="2"]
-transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 5.71157, 0.116485, 5.86585)
+[node name="Victory2" type="Area3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 285.579, 1.22874, 293.292)
 script = ExtResource("2_jl2y8")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldBorder/Victory" index="0"]
-transform = Transform3D(8, 0, 0, 0, 7.81696, 1.70151, 0, -1.70151, 7.81696, -139.744, -0.368829, -246.957)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Victory2" index="0"]
+transform = Transform3D(0.05, 0, 0, 0, 0.048856, 0.0106345, 0, -0.0106345, 0.048856, -140.585, 0.89906, -246.642)
 shape = SubResource("BoxShape3D_u4vhk")
 
-[node name="Player" parent="." index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.301732, 1.56634, -0.496266)
+[node name="Player" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.305377, 1.56634, -0.503018)
 
-[node name="CSGBox3D2" parent="." index="8"]
+[node name="CSGBox3D2" parent="." index="10"]
 size = Vector3(10.0755, 1, 24.1638)
 
-[node name="CSGBox3D3" parent="." index="9"]
+[node name="CSGBox3D3" parent="." index="11"]
 transform = Transform3D(1, 0, 0, 0, 0.931189, -0.364536, 0, 0.364536, 0.931189, -1.88446, -2.10195, 64.9249)
 size = Vector3(10.6275, 1, 11.8784)
 
-[node name="CSGBox3D4" parent="." index="10"]
-transform = Transform3D(0.998981, 0.0305612, 0.033222, -0.0343398, 0.992197, 0.119863, -0.0292996, -0.120882, 0.992235, -2.99032, -0.288176, 46.123)
+[node name="CSGBox3D4" parent="." index="12"]
+transform = Transform3D(0.998981, 0.0305612, 0.033222, -0.0343398, 0.992197, 0.119863, -0.0292996, -0.120882, 0.992235, -2.99032, 0.195997, 46.123)
 size = Vector3(10.0755, 1, 14.49)
 
-[node name="CSGBox3D5" parent="." index="11"]
+[node name="CSGBox3D5" parent="." index="13"]
 transform = Transform3D(0.989574, -0.144028, 0, 0.144028, 0.989574, 0, 0, 0, 1, 40.3511, -2.15808, 21.4864)
 size = Vector3(12.5874, 1, 10.9106)
 
@@ -58,7 +58,7 @@ height = 3.49916
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.75626, -2.64892, 7.65536)
 height = 21.6715
 
-[node name="CSGBox3D6" parent="." index="12"]
+[node name="CSGBox3D6" parent="." index="14"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.3367, 1.61186, 166.84)
 visible = false
 
@@ -74,7 +74,7 @@ visible = false
 [node name="CSGCylinder3D4" parent="CSGBox3D6" index="3"]
 visible = false
 
-[node name="CSGBox3D7" parent="." index="13"]
+[node name="CSGBox3D7" parent="." index="15"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.017, -1.76168, 108.456)
 visible = false
 
@@ -87,29 +87,29 @@ visible = false
 [node name="CSGCylinder3D4" parent="CSGBox3D7" index="3"]
 visible = false
 
-[node name="CSGCylinder3D" parent="." index="14"]
+[node name="CSGCylinder3D" parent="." index="16"]
 visible = false
 
-[node name="CSGCylinder3D2" parent="." index="15"]
+[node name="CSGCylinder3D2" parent="." index="17"]
 transform = Transform3D(0.743529, 0, 1.30275, 0, 1, 0, -1.30275, 0, 0.743529, 83.0251, 2.47837, 183.052)
 
 [node name="CSGCylinder3D2" parent="CSGCylinder3D2" index="0"]
 transform = Transform3D(1.07726, 0.238631, -0.980499, -0.387144, 0.963705, 0.102372, 0.969341, 0.119696, 1.13054, 31.7923, -11.4616, 66.9988)
 radius = 1.84531
 
-[node name="CSGCylinder3D3" parent="." index="16"]
+[node name="CSGCylinder3D3" parent="." index="18"]
 transform = Transform3D(0.683014, 0, -1.33547, 0, 1, 0, 1.33547, 0, 0.683014, 65.3338, -0.443528, 160.593)
 visible = false
 
-[node name="CSGCylinder3D4" parent="." index="17"]
+[node name="CSGCylinder3D4" parent="." index="19"]
 transform = Transform3D(-1.4511, 0.0808865, 0.35999, 0.0182964, -0.931645, 0.544748, 0.379446, 0.354253, 1.35043, 208.523, -3.51169, 202.892)
 radius = 2.5527
 height = 9.83751
 
-[node name="CSGCylinder3D5" parent="." index="18"]
+[node name="CSGCylinder3D5" parent="." index="20"]
 visible = false
 
-[node name="CSGBox3D8" parent="." index="19"]
+[node name="CSGBox3D8" parent="." index="21"]
 visible = false
 
 [node name="CSGCylinder3D" parent="CSGBox3D8" index="0"]
@@ -121,13 +121,13 @@ visible = false
 [node name="CSGCylinder3D4" parent="CSGBox3D8" index="3"]
 visible = false
 
-[node name="CSGCylinder3D6" parent="." index="20"]
+[node name="CSGCylinder3D6" parent="." index="22"]
 transform = Transform3D(0.683014, 0, -1.33547, 0, 1, 0, 1.33547, 0, 0.683014, 7.47548, -8.68525, 10.7685)
 radius = 0.591071
 height = 18.3511
 script = ExtResource("2_5johd")
 
-[node name="CSGBox3D9" parent="." index="21"]
+[node name="CSGBox3D9" parent="." index="23"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34723.7, -1.20381, 99.3582)
 visible = false
 size = Vector3(6.28195, 0.002, 10.1259)
@@ -136,7 +136,7 @@ size = Vector3(6.28195, 0.002, 10.1259)
 transform = Transform3D(0.998789, -0.0381596, -0.0310536, 0.0491387, 0.74265, 0.667874, -0.00242391, -0.668591, 0.743626, -23.4368, 2.12611, -1.82873)
 size = Vector3(38.0416, 1, 14.5861)
 
-[node name="CSGBox3D10" parent="." index="22"]
+[node name="CSGBox3D10" parent="." index="24"]
 visible = false
 
 [node name="CSGCylinder3D" parent="CSGBox3D10" index="0"]
@@ -151,10 +151,10 @@ visible = false
 [node name="CSGCylinder3D4" parent="CSGBox3D10" index="3"]
 visible = false
 
-[node name="CSGBox3D11" parent="." index="23"]
+[node name="CSGBox3D11" parent="." index="25"]
 transform = Transform3D(0.147265, -0.304411, -0.941088, 0.0242015, 0.952286, -0.304245, 0.988801, 0.0220291, 0.147606, 10.8188, -0.7089, 77.7191)
 
-[node name="CSGCylinder3D7" parent="." index="24"]
+[node name="CSGCylinder3D7" parent="." index="26"]
 transform = Transform3D(0.743529, 0, 1.30275, 0, 1, 0, -1.30275, 0, 0.743529, 47.2346, 2.40748, 127.982)
 visible = false
 
@@ -162,53 +162,32 @@ visible = false
 transform = Transform3D(1.20153, 0, 0.897946, 0, 1, 0, -0.897946, 0, 1.20153, 17.3353, -8.29324, 4.4029)
 visible = false
 
-[node name="CSGCylinder3D8" parent="." index="25"]
+[node name="CSGCylinder3D8" parent="." index="27"]
 visible = false
 
-[node name="CSGCylinder3D9" parent="." index="26"]
+[node name="CSGCylinder3D9" parent="." index="28"]
 visible = false
 
-[node name="CSGCylinder3D10" parent="." index="27"]
+[node name="CSGCylinder3D10" parent="." index="29"]
 transform = Transform3D(0.743529, 0, 1.30275, 0, 1, 0, -1.30275, 0, 0.743529, 51.1635, 2.40748, 139.921)
 visible = false
 
 [node name="CSGCylinder3D2" parent="CSGCylinder3D10" index="0"]
 transform = Transform3D(1.20153, 0, 0.897946, 0, 1, 0, -0.897946, 0, 1.20153, 61.1653, -48.8556, -43.4459)
 
-[node name="CSGCylinder3D11" parent="." index="28"]
+[node name="CSGCylinder3D11" parent="." index="30"]
 transform = Transform3D(0.743529, 0, 1.30275, 0, 1, 0, -1.30275, 0, 0.743529, 48.9315, 3.05509, 119.908)
 visible = false
 
-[node name="CSGCylinder3D12" parent="." index="29"]
+[node name="CSGCylinder3D12" parent="." index="31"]
 transform = Transform3D(0.743529, 0, 1.30275, 0, 1, 0, -1.30275, 0, 0.743529, 47.2346, 2.40748, 114.217)
 visible = false
 
-[node name="CSGCylinder3D13" parent="." index="30"]
+[node name="CSGCylinder3D13" parent="." index="32"]
 transform = Transform3D(0.743529, 0, 1.30275, 0, 1, 0, -1.30275, 0, 0.743529, 44.3095, 2.40748, 120.843)
 visible = false
 
-[node name="CSGBox3D12" type="CSGBox3D" parent="." index="31"]
-transform = Transform3D(0.987317, -0.120758, -0.10307, 0.15713, 0.836157, 0.5255, 0.0227244, -0.53503, 0.844527, 11.9431, 2.12611, 80.8625)
-visible = false
-use_collision = true
-size = Vector3(38.0416, 1, 11.1683)
-material = ExtResource("2_28bhb")
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D12" index="0"]
-transform = Transform3D(0.999245, -0.024508, -0.0301413, 0.000596309, 0.785469, -0.618899, 0.0388431, 0.618415, 0.78489, -14.8673, -8.96545, -9.87143)
-radius = 0.75
-height = 19.8622
-smooth_faces = false
-material = ExtResource("3_glta7")
-
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGBox3D12" index="1"]
-transform = Transform3D(0.999479, 0.00760177, -0.0313935, -0.0274215, 0.713324, -0.700297, 0.0170703, 0.700793, 0.71316, 17.7402, -9.65728, -11.262)
-radius = 0.75
-height = 26.9649
-smooth_faces = false
-material = ExtResource("3_glta7")
-
-[node name="CSGBox3D13" type="CSGBox3D" parent="." index="32"]
+[node name="CSGBox3D13" type="CSGBox3D" parent="." index="33"]
 transform = Transform3D(-0.997074, 0.00963646, 0.0758372, 0.0595514, 0.719944, 0.691472, -0.0479351, 0.693965, -0.718411, 50.4622, 0.953761, 66.8602)
 use_collision = true
 size = Vector3(24.5298, 1, 11.1683)
@@ -228,7 +207,7 @@ height = 26.9649
 smooth_faces = false
 material = ExtResource("3_glta7")
 
-[node name="CSGBox3D14" type="CSGBox3D" parent="." index="33"]
+[node name="CSGBox3D14" type="CSGBox3D" parent="." index="34"]
 transform = Transform3D(0.998789, -0.0381596, -0.0310536, 0.0491622, 0.749887, 0.659736, -0.00188862, -0.660464, 0.750855, 83.2785, 4.90215, 74.2828)
 use_collision = true
 size = Vector3(33.8205, 1, 6.18991)
@@ -248,7 +227,7 @@ height = 26.9649
 smooth_faces = false
 material = ExtResource("3_glta7")
 
-[node name="CSGBox3D15" type="CSGBox3D" parent="." index="34"]
+[node name="CSGBox3D15" type="CSGBox3D" parent="." index="35"]
 transform = Transform3D(-0.736675, -0.435618, 0.517249, 0.0490768, 0.728425, 0.683365, -0.674464, 0.528803, -0.515234, 121.759, 6.17706, 76.5912)
 use_collision = true
 size = Vector3(36.9269, 1, 11.1683)
@@ -268,7 +247,7 @@ height = 26.9649
 smooth_faces = false
 material = ExtResource("3_glta7")
 
-[node name="CSGBox3D16" type="CSGBox3D" parent="." index="35"]
+[node name="CSGBox3D16" type="CSGBox3D" parent="." index="36"]
 transform = Transform3D(0.689436, 0.470342, -0.550869, 0.0490768, 0.728425, 0.683365, 0.722682, -0.498171, 0.47912, 128.796, 5.01499, 104.236)
 use_collision = true
 size = Vector3(38.0416, 1, 11.1683)
@@ -288,7 +267,7 @@ height = 26.9649
 smooth_faces = false
 material = ExtResource("3_glta7")
 
-[node name="CSGCylinder3D16" type="CSGCylinder3D" parent="." index="36"]
+[node name="CSGCylinder3D16" type="CSGCylinder3D" parent="." index="37"]
 transform = Transform3D(0.2609, -0.714086, 0.649624, -0.952794, -0.0822234, 0.292275, -0.155295, -0.695212, -0.701828, 137.923, 2.02755, 110.024)
 use_collision = true
 radius = 0.75
@@ -296,7 +275,7 @@ height = 28.0585
 smooth_faces = false
 material = ExtResource("3_glta7")
 
-[node name="CSGCylinder3D17" type="CSGCylinder3D" parent="." index="37"]
+[node name="CSGCylinder3D17" type="CSGCylinder3D" parent="." index="38"]
 transform = Transform3D(0.999479, 0.00760177, -0.0313935, -0.00558633, 0.997947, 0.063794, 0.031814, -0.0635849, 0.997469, 120.1, -11.1792, 85.0317)
 use_collision = true
 radius = 2.54209
@@ -304,7 +283,7 @@ height = 28.0585
 smooth_faces = false
 material = ExtResource("3_glta7")
 
-[node name="CSGBox3D17" type="CSGBox3D" parent="." index="38"]
+[node name="CSGBox3D17" type="CSGBox3D" parent="." index="39"]
 transform = Transform3D(-0.736675, -0.435618, 0.517249, 0.0490768, 0.728425, 0.683365, -0.674464, 0.528803, -0.515234, 172.016, 2.87141, 122.13)
 use_collision = true
 size = Vector3(37.4826, 1, 11.1683)
@@ -324,7 +303,7 @@ height = 26.9649
 smooth_faces = false
 material = ExtResource("3_glta7")
 
-[node name="CSGBox3D18" type="CSGBox3D" parent="." index="39"]
+[node name="CSGBox3D18" type="CSGBox3D" parent="." index="40"]
 transform = Transform3D(-0.3857, 0.128436, 0.91364, -0.144662, 0.969596, -0.197372, -0.911212, -0.208295, -0.355394, 188.155, 3.26903, 161.944)
 use_collision = true
 size = Vector3(42.3689, 1, 11.1683)
@@ -344,7 +323,7 @@ height = 15.9164
 smooth_faces = false
 material = ExtResource("3_glta7")
 
-[node name="CSGCylinder3D18" type="CSGCylinder3D" parent="." index="40"]
+[node name="CSGCylinder3D18" type="CSGCylinder3D" parent="." index="41"]
 transform = Transform3D(1.1299, -0.320494, -0.861503, 0.0802499, 0.900205, -0.648249, 0.983289, 0.294813, 1.04287, 35.7403, -4.56867, 64.7456)
 use_collision = true
 radius = 1.84531
@@ -352,7 +331,7 @@ height = 15.1702
 smooth_faces = false
 material = ExtResource("3_glta7")
 
-[node name="CSGCylinder3D19" type="CSGCylinder3D" parent="." index="41"]
+[node name="CSGCylinder3D19" type="CSGCylinder3D" parent="." index="42"]
 transform = Transform3D(-1.49229, -0.101282, 0, 0.151923, -0.994858, 0, 0, 0, 1.5, 195.967, -14.8301, 214.623)
 use_collision = true
 radius = 3.40312
@@ -360,7 +339,7 @@ height = 33.4064
 smooth_faces = false
 material = ExtResource("3_glta7")
 
-[node name="CSGCylinder3D20" type="CSGCylinder3D" parent="." index="42"]
+[node name="CSGCylinder3D20" type="CSGCylinder3D" parent="." index="43"]
 transform = Transform3D(-1.08879, 0.312676, 0.919001, -0.241635, -0.943212, 0.435776, 1.00307, 0.11218, 1.10251, 208.264, -11.4027, 188.734)
 use_collision = true
 radius = 0.982079
@@ -368,7 +347,7 @@ height = 20.8022
 smooth_faces = false
 material = ExtResource("3_glta7")
 
-[node name="CSGCylinder3D21" type="CSGCylinder3D" parent="." index="43"]
+[node name="CSGCylinder3D21" type="CSGCylinder3D" parent="." index="44"]
 transform = Transform3D(-1.45308, -0.248149, 0, 0.372223, -0.968722, 0, 0, 0, 1.5, 206.361, -9.55161, 191.302)
 use_collision = true
 radius = 0.847903
@@ -376,7 +355,7 @@ height = 18.0883
 smooth_faces = false
 material = ExtResource("3_glta7")
 
-[node name="CSGCylinder3D22" type="CSGCylinder3D" parent="." index="44"]
+[node name="CSGCylinder3D22" type="CSGCylinder3D" parent="." index="45"]
 transform = Transform3D(-1.4429, -0.226548, -0.229233, 0.371347, -0.485635, -1.25756, 0.173574, -0.844296, 0.784853, 207.948, -4.41123, 228.034)
 use_collision = true
 radius = 3.40312
@@ -384,7 +363,7 @@ height = 76.6166
 smooth_faces = false
 material = ExtResource("3_glta7")
 
-[node name="CSGCylinder3D23" type="CSGCylinder3D" parent="." index="45"]
+[node name="CSGCylinder3D23" type="CSGCylinder3D" parent="." index="46"]
 transform = Transform3D(0.21333, -0.0558695, -1.48239, 1.27051, 0.523511, 0.138445, 0.768311, -0.850185, 0.182664, 232.742, -15.1633, 291.388)
 use_collision = true
 radius = 3.40312
@@ -392,7 +371,7 @@ height = 102.014
 smooth_faces = false
 material = ExtResource("3_glta7")
 
-[node name="CSGCylinder3D24" type="CSGCylinder3D" parent="." index="46"]
+[node name="CSGCylinder3D24" type="CSGCylinder3D" parent="." index="47"]
 transform = Transform3D(-1.49842, -0.045921, 0, 0.04273, -0.619686, -1.1765, 0.054026, -0.783505, 0.930511, 250.196, -8.43436, 241.193)
 use_collision = true
 radius = 3.40312
@@ -400,7 +379,7 @@ height = 74.7367
 smooth_faces = false
 material = ExtResource("3_glta7")
 
-[node name="CSGCylinder3D25" type="CSGCylinder3D" parent="." index="47"]
+[node name="CSGCylinder3D25" type="CSGCylinder3D" parent="." index="48"]
 transform = Transform3D(-1.46769, -0.206443, -1.36356e-08, -0.117069, 0.369907, -1.38868, 0.286683, -0.905842, -0.567076, 272.162, -2.78449, 277.402)
 use_collision = true
 radius = 3.55761
@@ -408,7 +387,7 @@ height = 64.2612
 smooth_faces = false
 material = ExtResource("3_glta7")
 
-[node name="CSGCylinder3D26" type="CSGCylinder3D" parent="." index="48"]
+[node name="CSGCylinder3D26" type="CSGCylinder3D" parent="." index="49"]
 transform = Transform3D(-1.49972, 0.0189941, -0.00645065, -0.0286986, -0.99921, 0.0522373, -0.00545335, 0.0349005, 1.49908, 283.979, -4.07957, 294.782)
 use_collision = true
 radius = 3.40312
@@ -416,7 +395,7 @@ height = 8.75293
 smooth_faces = false
 material = ExtResource("3_glta7")
 
-[node name="CSGCylinder3D27" type="CSGCylinder3D" parent="." index="49"]
+[node name="CSGCylinder3D27" type="CSGCylinder3D" parent="." index="50"]
 transform = Transform3D(0.683014, 0, -1.33547, 0, 1, 0, 1.33547, 0, 0.683014, 13.337, -10.0989, 13.014)
 use_collision = true
 radius = 0.361886
@@ -434,7 +413,7 @@ smooth_faces = false
 material = ExtResource("3_glta7")
 script = ExtResource("2_5johd")
 
-[node name="CSGCylinder3D28" type="CSGCylinder3D" parent="." index="50"]
+[node name="CSGCylinder3D28" type="CSGCylinder3D" parent="." index="51"]
 transform = Transform3D(0.470686, -0.223931, -1.38406, -0.522866, 0.876765, -0.496985, 1.32478, 0.425602, 0.295595, 19.4009, -8.44788, 8.52444)
 use_collision = true
 radius = 0.718587
@@ -443,7 +422,7 @@ smooth_faces = false
 material = ExtResource("3_glta7")
 script = ExtResource("2_5johd")
 
-[node name="CSGCylinder3D29" type="CSGCylinder3D" parent="." index="51"]
+[node name="CSGCylinder3D29" type="CSGCylinder3D" parent="." index="52"]
 transform = Transform3D(0.683014, 0, -1.33547, 0.456276, 0.939824, 0.233358, 1.25511, -0.341659, 0.641913, 20.0787, -9.96037, 18.8233)
 use_collision = true
 radius = 0.480394
@@ -452,7 +431,7 @@ smooth_faces = false
 material = ExtResource("3_glta7")
 script = ExtResource("2_5johd")
 
-[node name="CSGCylinder3D30" type="CSGCylinder3D" parent="." index="52"]
+[node name="CSGCylinder3D30" type="CSGCylinder3D" parent="." index="53"]
 transform = Transform3D(0.683014, 1.18367e-09, -1.33547, 0.0914835, 0.997651, 0.0467884, 1.33233, -0.0685028, 0.68141, 10.6751, -1.64435, 11.1748)
 use_collision = true
 radius = 0.107206
@@ -461,7 +440,7 @@ smooth_faces = false
 material = ExtResource("3_glta7")
 script = ExtResource("2_5johd")
 
-[node name="CSGCylinder3D31" type="CSGCylinder3D" parent="." index="53"]
+[node name="CSGCylinder3D31" type="CSGCylinder3D" parent="." index="54"]
 transform = Transform3D(0.683014, -2.36306e-08, -1.33547, -0.472513, 0.935314, -0.241662, 1.24908, 0.353818, 0.638833, 10.7349, -5.26428, 11.0429)
 use_collision = true
 radius = 0.179569
@@ -470,7 +449,7 @@ smooth_faces = false
 material = ExtResource("3_glta7")
 script = ExtResource("2_5johd")
 
-[node name="CSGCylinder3D32" type="CSGCylinder3D" parent="." index="54"]
+[node name="CSGCylinder3D32" type="CSGCylinder3D" parent="." index="55"]
 transform = Transform3D(0.634997, -0.132001, -1.34446, -0.657899, 0.835804, -0.495366, 1.18909, 0.532924, 0.443889, 26.3225, -9.72796, 8.99649)
 use_collision = true
 radius = 0.480394
@@ -479,7 +458,7 @@ smooth_faces = false
 material = ExtResource("3_glta7")
 script = ExtResource("2_5johd")
 
-[node name="CSGCylinder3D33" type="CSGCylinder3D" parent="." index="55"]
+[node name="CSGCylinder3D33" type="CSGCylinder3D" parent="." index="56"]
 transform = Transform3D(0.683014, 0, -1.33547, 0.456276, 0.939824, 0.233358, 1.25511, -0.341659, 0.641913, 29.1646, -9.96037, 18.8233)
 use_collision = true
 radius = 0.480394
@@ -488,7 +467,7 @@ smooth_faces = false
 material = ExtResource("3_glta7")
 script = ExtResource("2_5johd")
 
-[node name="CSGCylinder3D34" type="CSGCylinder3D" parent="." index="56"]
+[node name="CSGCylinder3D34" type="CSGCylinder3D" parent="." index="57"]
 transform = Transform3D(-0.731964, 0.242113, 1.25791, 0.625744, -0.77924, 0.701574, 1.15007, 0.578071, 0.418875, 50.8941, -0.912176, 37.3253)
 use_collision = true
 radius = 0.480394
@@ -497,7 +476,7 @@ smooth_faces = false
 material = ExtResource("3_glta7")
 script = ExtResource("2_5johd")
 
-[node name="CSGCylinder3D35" type="CSGCylinder3D" parent="." index="57"]
+[node name="CSGCylinder3D35" type="CSGCylinder3D" parent="." index="58"]
 transform = Transform3D(-0.440413, 0.789916, -0.807529, 0.877097, 0.593935, 0.828846, 1.13434, -0.152555, -0.95441, 71.6532, 4.49436, 50.3834)
 use_collision = true
 radius = 0.480394
@@ -506,7 +485,7 @@ smooth_faces = false
 material = ExtResource("3_glta7")
 script = ExtResource("2_5johd")
 
-[node name="CSGCylinder3D36" type="CSGCylinder3D" parent="." index="58"]
+[node name="CSGCylinder3D36" type="CSGCylinder3D" parent="." index="59"]
 transform = Transform3D(-0.400537, 0.734588, -0.935639, 0.620313, 0.671983, 0.921515, 1.30567, -0.0939064, -0.724829, 114.897, 11.2146, 48.8826)
 use_collision = true
 radius = 0.914199
@@ -515,13 +494,13 @@ smooth_faces = false
 material = ExtResource("3_glta7")
 script = ExtResource("2_5johd")
 
-[node name="CSGBox3D19" type="CSGBox3D" parent="." index="59"]
+[node name="CSGBox3D19" type="CSGBox3D" parent="." index="60"]
 transform = Transform3D(0.998789, -0.0381596, -0.0310536, 0.0231412, -0.192621, 0.981, -0.0434162, -0.980531, -0.191505, 83.2785, 4.90215, 57.4632)
 use_collision = true
 size = Vector3(53.4398, 1, 48.6879)
 material = ExtResource("2_28bhb")
 
-[node name="CSGCylinder3D37" type="CSGCylinder3D" parent="." index="60"]
+[node name="CSGCylinder3D37" type="CSGCylinder3D" parent="." index="61"]
 transform = Transform3D(-1.0719, -0.0386611, -1.04769, 0.186145, 0.975628, -0.271452, 1.03265, -0.215998, -1.03858, 146.239, -32.3177, 54.583)
 use_collision = true
 radius = 2.36303
@@ -530,7 +509,7 @@ smooth_faces = false
 material = ExtResource("3_glta7")
 script = ExtResource("2_5johd")
 
-[node name="CSGCylinder3D38" type="CSGCylinder3D" parent="." index="61"]
+[node name="CSGCylinder3D38" type="CSGCylinder3D" parent="." index="62"]
 transform = Transform3D(-1.0719, -0.0386611, -1.04769, 0.186145, 0.975628, -0.271452, 1.03265, -0.215998, -1.03858, 146.239, -32.3177, 54.583)
 use_collision = true
 radius = 2.36303
@@ -539,9 +518,9 @@ smooth_faces = false
 material = ExtResource("3_glta7")
 script = ExtResource("2_5johd")
 
-[node name="CSGCylinder3D14" parent="." index="62"]
+[node name="CSGCylinder3D14" parent="." index="63"]
 transform = Transform3D(0.743529, 0, 1.30275, 0, 1, 0, -1.30275, 0, 0.743529, 43.7452, 2.3913, 103.194)
 visible = false
 
-[node name="CSGCylinder3D15" parent="." index="63"]
+[node name="CSGCylinder3D15" parent="." index="64"]
 visible = false
