@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cn18etnduf77k" path="res://PixelOcean.png" id="2_i4n4n"]
 [ext_resource type="FontFile" uid="uid://cuwevlkiu8qjg" path="res://Panic.ttf" id="2_nwvu0"]
 [ext_resource type="Script" path="res://MainMenuScript.gd" id="2_xb7i7"]
-[ext_resource type="Theme" uid="uid://bbgh6pyqlmw03" path="res://new_theme.tres" id="3_qy7d5"]
+[ext_resource type="Theme" uid="uid://b5nghfdlp4mp7" path="res://new_theme.tres" id="3_qy7d5"]
 
 [sub_resource type="Theme" id="Theme_an7of"]
 Label/colors/font_color = Color(1, 1, 1, 1)
