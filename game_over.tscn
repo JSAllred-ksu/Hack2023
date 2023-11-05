@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c38jlonbssccy"]
+[gd_scene load_steps=5 format=3 uid="uid://d3cc6yo44asxr"]
 
 [ext_resource type="Texture2D" uid="uid://cn18etnduf77k" path="res://PixelOcean.png" id="1_efywt"]
 [ext_resource type="Script" path="res://GameOver.gd" id="2_4k8tv"]
-[ext_resource type="Theme" uid="uid://bbgh6pyqlmw03" path="res://new_theme.tres" id="3_ymxwo"]
+[ext_resource type="Theme" uid="uid://b5nghfdlp4mp7" path="res://new_theme.tres" id="3_ymxwo"]
 [ext_resource type="FontFile" uid="uid://cuwevlkiu8qjg" path="res://Panic.ttf" id="4_w3luy"]
 
 [node name="Game Over" type="Control"]
